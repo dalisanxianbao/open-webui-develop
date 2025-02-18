@@ -864,11 +864,11 @@ async def chat_completion(
         model_info = Models.get_model_by_id(model_id)
 
         # Check if user has access to the model
-        if not BYPASS_MODEL_ACCESS_CONTROL and user.role == "user":
-            try:
-                check_model_access(user, model)
-            except Exception as e:
-                raise e
+        # if not BYPASS_MODEL_ACCESS_CONTROL and user.role == "user":
+        #     try:
+        #         check_model_access(user, model)
+        #     except Exception as e:
+        #         raise e
 
         metadata = {
             "user_id": user.id,

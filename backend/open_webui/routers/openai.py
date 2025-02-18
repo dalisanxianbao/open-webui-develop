@@ -580,12 +580,12 @@ async def generate_chat_completion(
                     status_code=403,
                     detail="Model not found",
                 )
-    elif not bypass_filter:
-        if user.role != "admin":
-            raise HTTPException(
-                status_code=403,
-                detail="Model not found",
-            )
+    # elif not bypass_filter:
+    #     if user.role != "admin":
+    #         raise HTTPException(
+    #             status_code=403,
+    #             detail="Model not found",
+    #         )
 
     await get_all_models(request)
     model = request.app.state.OPENAI_MODELS.get(model_id)

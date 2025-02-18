@@ -77,11 +77,11 @@ async def generate_chat_completion(
     model = models[model_id]
 
     # Check if user has access to the model
-    if not bypass_filter and user.role == "user":
-        try:
-            check_model_access(user, model)
-        except Exception as e:
-            raise e
+    # if not bypass_filter and user.role == "user":
+    #     try:
+    #         check_model_access(user, model)
+    #     except Exception as e:
+    #         raise e
 
     if model["owned_by"] == "arena":
         model_ids = model.get("info", {}).get("meta", {}).get("model_ids")
